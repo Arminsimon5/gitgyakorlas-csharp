@@ -24,13 +24,20 @@ namespace gitgyakorlas_csharp
 
         static void Main(string[] args)
         {
-            Console.Write("Adja meg az első számot.: ");
-            int szam1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Adja meg az második számot.: ");
-            int szam2 = Convert.ToInt32(Console.ReadLine());
-            if (szam1 - szam2 == nagyobb(szam1, szam2)) { Console.WriteLine("A két szám egyenlő."); }
-            else { Console.WriteLine("A nagyobb szám a " + nagyobb(szam1, szam2)); }
+            List<int> lista = new List<int>();
+            int szam;
+            do
+            {
+                Console.Write("Adja meg a számot.: ");
+                szam = Convert.ToInt32(Console.ReadLine());
+                if (szam != 0)
+                {
+                    lista.Add(szam);
+                }
+            } while (szam != 0);
+            Console.WriteLine("A legnagyobb szám a felsorolásból a "+lista.Max());
             Console.ReadKey();
+            
         }
     }
 }
